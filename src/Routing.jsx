@@ -4,13 +4,14 @@ import NavBar from "./components/Navbar.jsx";
 
 const Routing = () => {
     return (
-      <NavBar>
+      <>
+        <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
 
           <Route path="*" element={<p>404 Not Found</p>} />
         </Routes>
-      </NavBar>
+      </>
     );
     }
 
