@@ -2,26 +2,66 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          width: "500px",
-          justifyContent: "space-between",
-            margin: "auto",
-        }}
-      >
-        <Link to="/home">Home</Link>
-        <Link to="/Search">Search</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/about">About</Link>
-
-       
-        
+    <header className="flex gap-0 justify-between px-10 py-3 border-b border-gray-200 border-solid max-md:flex-wrap max-md:px-5">
+      <div className="flex gap-4 my-auto">
+        <div className="flex flex-col justify-center my-auto">
+          <div className="shrink-0 h-4" />
+        </div>
+        <h1 className="justify-center text-lg font-bold leading-6 text-stone-900">
+          Base Logo
+        </h1>
       </div>
-    </>
+      <nav className="flex flex-1 gap-5 pl-20 max-md:flex-wrap">
+        <div className="flex gap-5 justify-between py-2.5 text-sm font-medium leading-5 whitespace-nowrap text-stone-900">
+          <div className="justify-center">Home</div>
+          <div className="justify-center">Search</div>
+          <div className="justify-center">Order</div>
+          <div className="justify-center">About</div>
+        </div>
+        <div className="flex gap-2">
+          <div className="flex flex-col justify-center px-4 py-2.5 text-sm font-bold leading-5 text-center bg-amber-500 rounded-xl max-w-[480px] text-stone-900">
+            <div className="justify-center text-ellipsis">
+              List your property
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-center px-2.5 w-10 h-10 bg-rose-100 rounded-xl">
+            <div className="flex justify-center items-center">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e3cebce77e1845457e870438a763466b0b3eb92181836a66fa1ab83c4c6fd2b?apiKey=19e7bba656cf4334ab650b33c0aad2c0&"
+                className="w-5 aspect-square"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
   );
 };
 
 export default NavBar;
+
+// const NavBar = () => {
+//   return (
+//     <>
+//       <div
+//         style={{
+//           display: "flex",
+//           width: "500px",
+//           justifyContent: "space-between",
+//           margin: "auto",
+//         }}
+//       >
+//         <Link to="/">Home</Link>
+//         <Link to="/Search">Search</Link>
+
+//         <Link to="/contact">Contact</Link>
+//         <Link to="/about">About</Link>
+//         <Link to="/order">Order</Link>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default NavBar;

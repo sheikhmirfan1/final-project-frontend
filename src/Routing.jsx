@@ -7,7 +7,7 @@ const Routing = () => {
       <>
         <NavBar />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
 
           <Route path="*" element={<p>404 Not Found</p>} />
         </Routes>
