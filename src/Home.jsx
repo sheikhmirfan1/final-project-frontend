@@ -1,5 +1,6 @@
 import SearchBar from "./components/SearchBar.jsx";
 import BackGroundImage from "./assets/hero.jpeg";
+import Card from "./Pagecard/Card.jsx";
 
 const Home = () => (
   <section className="flex justify-center items-center px-16 py-5 w-full max-md:px-5 max-md:max-w-full">
@@ -25,9 +26,15 @@ const Home = () => (
           </div>
         </div>
         {/* <ToggleButtons /> */}
+        <Card />
       </div>
     </div>
   </section>
+
+
+
 );
+
+
 
 export default Home

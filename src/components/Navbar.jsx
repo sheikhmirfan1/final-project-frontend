@@ -11,8 +11,8 @@ const NavBar = () => {
           Base Logo
         </h1>
       </div>
-      <nav className="flex justify-between flex-1 gap-5 pl-20 max-md:flex-wrap">
-        <div className="flex gap-40 justify-between py-2.5 text-sm font-bold leading-5 whitespace-nowrap text-stone-100">
+      <nav className="flex justify-between flex-1 gap-5 pl-20 max-md:flex-wrap ">
+        <div className="flex gap-40 justify-between flex-wrap py-2.5 text-sm font-bold leading-5 whitespace-nowrap text-stone-100">
           <Link className="justify-center">Home</Link>
           <Link className="justify-center">Search</Link>
           <Link className="justify-center">Order</Link>
