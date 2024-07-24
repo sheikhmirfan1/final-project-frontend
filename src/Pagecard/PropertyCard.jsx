@@ -1,12 +1,12 @@
 
 
-import PropTypes from 'prop-types';
+
 
 const PropertyCard = ({name, description, price, image}) => {
   
   
   return (
-  <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
+  <div className="flex flex-col w-[35%] max-md:ml-0 max-md:w-full">
     <div className="flex flex-col grow self-stretch pb-3 leading-[150%] max-md:mt-3">
       <img
         loading="lazy"
