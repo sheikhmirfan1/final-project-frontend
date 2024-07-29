@@ -19,9 +19,9 @@ const NavBar = () => {
           <Link className="justify-center">About</Link>
         </div>
         <div className="flex gap-2">
-          <div className="flex flex-col justify-center px-4 py-2.5 text-sm font-bold leading-5 text-center bg-amber-500 rounded-xl max-w-[480px] text-stone-900">
+          <div className="flex flex-col justify-center px-4 py-2.5 text-sm font-bold leading-5 text-center bg-amber-500 rounded-xl w-100px text-stone-900">
             <div className="justify-center text-ellipsis">
-              List your property
+              Orders list
             </div>
           </div>
           <div className="flex flex-col justify-center items-center px-1.5 w-10 h-10 bg-rose-100 rounded-xl">

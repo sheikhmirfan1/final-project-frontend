@@ -83,6 +83,7 @@ const Card = () => {
                   <PropertyCard key={product._id} {...product} />
                 ))
               : "Loading..."}
+            
           </div>
         </div>
       </section>
