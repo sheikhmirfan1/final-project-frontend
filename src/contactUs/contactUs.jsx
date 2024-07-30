@@ -1,11 +1,8 @@
-
-
-
-
-
+import { MyMap } from "./Map.jsx";
 
 const ContactUs = () => {
   return (
+    <>
     <section className="bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white dark:text-white">
@@ -68,6 +65,19 @@ const ContactUs = () => {
         </form>
       </div>
     </section>
+
+    <div className="bg-gray-900">
+      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-lg">
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white dark:text-white">
+          Our Location
+        </h2>
+        <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+          Find us at the heart of the city.
+        </p>
+        <MyMap />
+      </div>
+      </div>
+    </>
   );
 };
 
