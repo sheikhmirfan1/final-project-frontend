@@ -1,4 +1,6 @@
+import { Footer } from "../components/Footer.jsx";
 import { MyMap } from "./Map.jsx";
+
 
 const ContactUs = () => {
   return (
@@ -77,6 +79,7 @@ const ContactUs = () => {
         <MyMap />
       </div>
       </div>
+      <Footer />
     </>
   );
 };

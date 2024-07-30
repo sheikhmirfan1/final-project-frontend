@@ -1,8 +1,10 @@
 import SearchBar from "./components/SearchBar.jsx";
 import BackGroundImage from "./assets/hero.jpeg";
 import Card from "./Pagecard/Card.jsx";
+import {Footer} from "./components/Footer.jsx";
 
 const Home = () => (
+  <>
   <section className="flex w-full">
     <div className="flex flex-col w-full">
       <div className="flex flex-col justify-center max-md:max-w-full">
@@ -30,6 +32,10 @@ const Home = () => (
       </div>
     </div>
   </section>
+  <Footer />
+  </>
+
+  
 
 
 

@@ -1,4 +1,4 @@
-
+import { Footer } from "../components/Footer.jsx";
 import Header from "./Header.jsx";
 import SearchBar from "./SearchBar.jsx";
 import MenuSection from "./MenuSection.jsx";
@@ -83,6 +83,7 @@ const OrderPage = () => {
         </div>
       </div>
      
+      <Footer />
     </div>
   );
 };
