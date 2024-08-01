@@ -20,7 +20,7 @@ const NavBar = () => {
             Order
           </Link>
           <Link to="/contactUs" className="justify-center">Contact Us</Link>
-          <Link className="justify-center">About</Link>
+          <Link to="aboutUs" className="justify-center">About</Link>
         </div>
         <div className="flex gap-2">
           <div className="flex flex-col justify-center px-4 py-2.5 text-sm font-bold leading-5 text-center bg-amber-500 rounded-xl w-100px text-stone-900">
@@ -28,12 +28,7 @@ const NavBar = () => {
           </div>
           <div className="flex flex-col justify-center items-center px-1.5 w-10 h-10 bg-rose-100 rounded-xl">
             <div className="flex justify-center items-center">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e3cebce77e1845457e870438a763466b0b3eb92181836a66fa1ab83c4c6fd2b?apiKey=19e7bba656cf4334ab650b33c0aad2c0&"
-                className="w-5 aspect-square"
-                alt=""
-              />
+              <input type="submit" value="login" />
             </div>
           </div>
         </div>

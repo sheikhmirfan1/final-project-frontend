@@ -1,6 +1,6 @@
 import { Footer } from "../components/Footer.jsx";
 import Header from "./Header.jsx";
-import SearchBar from "./SearchBar.jsx";
+import SearchBarOrder from "./SearchBarOrder.jsx";
 import MenuSection from "./MenuSection.jsx";
 import OrderForm from "./OrderForm.jsx";
 
@@ -68,7 +68,7 @@ const OrderPage = () => {
               <div className="text-base font-medium text-white max-md:max-w-full">
                 Menu
               </div>
-              <SearchBar />
+              <SearchBarOrder />
               {menuSections.map((section, index) => (
                 <MenuSection
                   key={index}

@@ -1,6 +1,6 @@
 
 
-const SearchBar = () => {
+const SearchBarOrder = () => {
   return (
     <div className="flex gap-2.5 mt-7 max-md:flex-wrap">
       <div className="flex overflow-hidden relative flex-col justify-center py-3.5 text-base font-light whitespace-nowrap border border-solid aspect-[5.22] border-slate-300 border-opacity-80 text-slate-500 w-[209px]">
@@ -39,4 +39,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default SearchBarOrder;

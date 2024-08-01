@@ -32,8 +32,8 @@ export function Footer() {
               <ul key={title}>
                 <Typography
                   variant="small"
-                  color="blue-gray"
-                  className="mb-3 font-medium opacity-40"
+                  color="white"
+                  className="mb-3 font-medium opacity-100"
                 >
                   {title}
                 </Typography>
@@ -42,8 +42,8 @@ export function Footer() {
                     <Typography
                       as="a"
                       href="#"
-                      color="gray"
-                      className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
+                      color="white"
+                      className="py-1.5 font-normal transition-colors hover:text-blue-gray-400"
                     >
                       {link}
                     </Typography>
@@ -56,14 +56,14 @@ export function Footer() {
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <Typography
             variant="small"
-            className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
+            className="mb-4 text-center font-normal text-white md:mb-0"
           >
             &copy; {currentYear}{" "}
             {/* <a href="https://material-tailwind.com/">Material Tailwind</a> */}
             . All
             Rights Reserved.
           </Typography>
-          <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
+          <div className="flex gap-4 text-white sm:justify-center">
             <Typography
               as="a"
               href="#"
