@@ -1,4 +1,4 @@
-import PropertyCard from "./PropertyCard.jsx";
+import {PropertyCard} from "./PropertyCard.jsx";
 import axios from "axios";
 import { useEffect, useState } from "react";
 

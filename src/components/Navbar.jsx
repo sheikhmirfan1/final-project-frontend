@@ -65,9 +65,9 @@ export function StickyNavbar() {
   );
 
   return (
-    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
-      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
-        <div className="flex items-center justify-between text-blue-gray-900">
+    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)]">
+      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-white">
+        <div className="flex items-center justify-evenly text-blue-gray-900">
           <Typography
             as="a"
             href="#"
@@ -79,17 +79,13 @@ export function StickyNavbar() {
             <div className="mr-4 hidden lg:block">{navList}</div>
             <div className="flex items-center gap-x-1">
               <Button
-                variant="text"
+                color="blue"
                 size="sm"
                 className="hidden lg:inline-block"
               >
                 <span>Log In</span>
               </Button>
-              <Button
-                variant="gradient"
-                size="sm"
-                className="hidden lg:inline-block"
-              >
+              <Button color="blue" size="sm" className="hidden lg:inline-block">
                 <span>Sign in</span>
               </Button>
             </div>
@@ -135,19 +131,16 @@ export function StickyNavbar() {
         <MobileNav open={openNav}>
           {navList}
           <div className="flex items-center gap-x-1">
-            <Button fullWidth variant="text" size="sm" className="">
+            <Button fullWidth color="blue" size="sm" className="">
               <span>Log In</span>
             </Button>
-            <Button fullWidth variant="gradient" size="sm" className="">
+            <Button fullWidth color="blue" size="sm" className="">
               <span>Sign in</span>
             </Button>
           </div>
         </MobileNav>
       </Navbar>
-      <div className="mx-auto max-w-screen-md py-12">
-     
-       
-      </div>
+      <div className="mx-auto max-w-screen-md py-12"></div>
     </div>
   );
 }

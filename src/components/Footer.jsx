@@ -5,15 +5,15 @@ import { Typography } from "@material-tailwind/react";
 const LINKS = [
   {
     title: "Product",
-    items: ["Overview", "Features", "Solutions", "Tutorials"],
+    items: ["Overview", ""],
   },
   {
-    title: "Company",
-    items: ["About us", "Careers", "Press", "News"],
+    title: "About Us",
+    items: ["About us", "Careers", "Blog"],
   },
   {
     title: "Resource",
-    items: ["Blog", "Newsletter", "Events", "Help center"],
+    items: [  "Events", "Help center"],
   },
 ];
  
@@ -21,9 +21,9 @@ const currentYear = new Date().getFullYear();
  
 export function Footer() {
   return (
-    <footer className="relative w-full bg-gray-900">
-      <div className="mx-auto w-full max-w-7xl px-8">
-        <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
+    <footer className=" relative w-full bg-gray-900">
+      <div className=" mx-auto w-full max-w-7xl px-8">
+        <div className="pt-10 grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <Typography variant="h5" className="mb-6">
             Logo Base
           </Typography>

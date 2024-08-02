@@ -4,7 +4,7 @@ import {StickyNavbar} from "./components/Navbar.jsx";
 import OrderPage from "./orderform/OrderPage.jsx";
 import ContactUs from "./contactUs/contactUs.jsx";
 import About from "./About/aboutUs.jsx";
-import {SimpleRegistrationForm} from "./components/Reservation/booking.jsx";
+import {SimpleRegistrationForm} from "./Reservation/booking.jsx";
 
 const Routing = () => {
   return (

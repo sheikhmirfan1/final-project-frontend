@@ -6,10 +6,13 @@ const SearchBar = () => (
       <input
         type="text"
         placeholder="Search"
-        className="w-full p-3 rounded-l-xl focus:outline-none"
+        className="w-full text-white p-3 rounded-l-xl focus:outline-none"
       />
-      <button type="submit" className="bg-[#F59E0B] p-3 rounded-r-xl">
-      <input type="submit" value="Search" />
+      <button
+        type="submit"
+        className="bg-[#1e88e5] bg-blue-gray-900/10 p-3 rounded-r-xl"
+      >
+        <input type="submit" value="Search" />
       </button>
     </div>
   </div>

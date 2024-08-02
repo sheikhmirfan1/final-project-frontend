@@ -1,5 +1,5 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
-import { Footer } from "../Footer.jsx";
+import { Footer } from "../components/Footer";
 
 export function SimpleRegistrationForm() {
   return (
@@ -63,7 +63,7 @@ export function SimpleRegistrationForm() {
               
             </div>
 
-            <Button className="mt-6" fullWidth>
+            <Button className="mt-6 bg-blue-600" fullWidth>
               Book Now
             </Button>
           </form>
