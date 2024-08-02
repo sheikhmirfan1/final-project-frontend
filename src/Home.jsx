@@ -3,7 +3,7 @@ import BackGroundImage from "./assets/image_6.jpg";
 import Card from "./Pagecard/Card.jsx";
 import {Footer} from "./components/Footer.jsx";
 import {CarouselDefault} from "./components/Slider.jsx";
-import {SimpleRegistrationForm} from "./components/booking.jsx";
+
 
 const Home = () => (
   <>
@@ -35,7 +35,7 @@ const Home = () => (
     </section>
     <Card />
     <CarouselDefault />
-    <SimpleRegistrationForm />
+   
     <Footer />
   </>
 );
