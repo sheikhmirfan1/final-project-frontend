@@ -14,7 +14,7 @@ const Home = () => (
               <img
                 loading="Hero"
                 src={BackGroundImage}
-                className="  object-cover  w-full h-full absolute top-0 left-0 z-0"
+                className="  object-cover opacity-80 w-full h-full absolute top-0 left-0 z-0"
                 alt="Background image of a home"
               />
               <div className="flex relative flex-col mt-48 max-w-full text-white w-[713px] max-md:mt-10">

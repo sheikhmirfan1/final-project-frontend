@@ -41,53 +41,55 @@ const Card = () => {
     });
 
   return (
-    <div>
-      <section className="flex flex-col justify-center p-4 max-md:max-w-full">
-        <h3 className="px-4 pt-4 pb-2 text-lg font-bold leading-6 text-stone-100 max-md:max-w-full">
-          Chicken
-        </h3>
-        <div className="px-px max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-            {products && !loading
-              ? chickenProduct.map((product) => (
-                  <PropertyCard key={product._id} {...product} />
-                ))
-              : "Loading..."}
+    
+    <marquee behavior="" direction="">
+      <div className="flex ">
+        <section className="flex flex-col justify-center p-4 max-md:max-w-full">
+          <h3 className="text-black px-4 pt-4 pb-2 text-lg font-bold leading-6 text-stone-100 max-md:max-w-full">
+            Chicken
+          </h3>
+          <div className="px-px max-md:max-w-full">
+            <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+              {products && !loading
+                ? chickenProduct.map((product) => (
+                    <PropertyCard key={product._id} {...product} />
+                  ))
+                : "Loading..."}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="flex flex-col justify-center p-4 max-md:max-w-full">
-        <h3 className="px-4 pt-4 pb-2 text-lg font-bold leading-6 text-stone-100 max-md:max-w-full">
-          Vegan
-        </h3>
-        <div className="px-px max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-            {products && !loading
-              ? veganProduct.map((product) => (
-                  <PropertyCard key={product._id} {...product} />
-                ))
-              : "Loading..."}
+        <section className="flex flex-col justify-center p-4 max-md:max-w-full">
+          <h3 className="text-black px-4 pt-4 pb-2 text-lg font-bold leading-6 text-stone-100 max-md:max-w-full">
+            Vegan
+          </h3>
+          <div className="px-px max-md:max-w-full">
+            <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+              {products && !loading
+                ? veganProduct.map((product) => (
+                    <PropertyCard key={product._id} {...product} />
+                  ))
+                : "Loading..."}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="flex flex-col justify-center p-4 max-md:max-w-full">
-        <h3 className="px-4 pt-4 pb-2 text-lg font-bold leading-6 text-stone-100 max-md:max-w-full">
-          Mutton
-        </h3>
-        <div className="px-px max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-            {products && !loading
-              ? muttonProduct.map((product) => (
-                  <PropertyCard key={product._id} {...product} />
-                ))
-              : "Loading..."}
-            
+        <section className="flex flex-col justify-center p-4 max-md:max-w-full">
+          <h3 className="text-black px-4 pt-4 pb-2 text-lg font-bold leading-6 text-stone-100 max-md:max-w-full">
+            Mutton
+          </h3>
+          <div className="px-px max-md:max-w-full">
+            <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+              {products && !loading
+                ? muttonProduct.map((product) => (
+                    <PropertyCard key={product._id} {...product} />
+                  ))
+                : "Loading..."}
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </marquee>
   );
 };
 

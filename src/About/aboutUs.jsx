@@ -1,22 +1,85 @@
-import React from 'react';
+const people = [
+  {
+    name: "Leslie Alexander",
+    role: "Co-Founder / CEO",
+    imageUrl:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  },
+  // More people...
 
-const About = () => {
+  {
+    name: "Courtney Henry",
+    role: "Chef",
+    imageUrl:
+      "/src/assets/1.jpg",
+  },
+  {
+    name: "Tom Cook",
+    role: "Chef",
+    imageUrl:
+      "/src/assets/3.jpg",
+  },
+
+  {
+    name: "Whitney Francis",
+    role: "Chef",
+    imageUrl:
+      "/src/assets/2.jpg",
+  },
+  {
+    name: "Kristin Watson",
+    role: "Chef",
+    imageUrl:
+      "https://images.unsplash.com/photo-1554774858-3e5f3e2550e8?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  },
+  
+  
+];
+
+export default function About() {
   return (
-    <div className="">
-      <div className="container mx-auto py-8">
-        <h1 className="text-3xl font-bold mb-4">About Us</h1>
-        <p className="text-gray-700">
-          Welcome to our restaurant! We are dedicated to providing you with the best dining experience possible. Our team of talented chefs and friendly staff work hard to ensure that every meal is a memorable one.
-        </p>
-        <p className="text-gray-700 mt-4">
-          At our restaurant, we pride ourselves on using only the freshest ingredients sourced from local farmers and suppliers. Our menu features a wide variety of delicious dishes, ranging from classic favorites to innovative creations.
-        </p>
-        <p className="text-gray-700 mt-4">
-          Whether you're joining us for a casual lunch, a romantic dinner, or a special celebration, we strive to exceed your expectations with exceptional service and mouthwatering cuisine. We look forward to serving you soon!
-        </p>
+    <div className=" py-24 sm:py-32 relative">
+      <img
+        src="/src/assets/myteam.jpg"
+        className="  object-cover opacity-15 w-full h-full absolute top-0 left-0 z-0"
+        alt="Background image of a home"
+      />
+
+      <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Meet our leadership
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae
+            elementum enim vitae ullamcorper suspendisse.
+          </p>
+        </div>
+        <ul
+          role="list"
+          className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
+        >
+          {people.map((person) => (
+            <li key={person.name}>
+              <div className="flex items-center gap-x-6">
+                <img
+                  alt=""
+                  src={person.imageUrl}
+                  className="h-16 w-16 rounded-full"
+                />
+                <div>
+                  <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
+                    {person.name}
+                  </h3>
+                  <p className="text-sm font-semibold leading-6 text-indigo-600">
+                    {person.role}
+                  </p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
-};
-
-export default About;
+}

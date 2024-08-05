@@ -8,11 +8,8 @@ const SearchBar = () => (
         placeholder="Search"
         className="w-full text-white p-3 rounded-l-xl focus:outline-none"
       />
-      <button
-        type="submit"
-        className="bg-[#1e88e5] bg-blue-gray-900/10 p-3 rounded-r-xl"
-      >
-        <input type="submit" value="Search" />
+      <button className="bg-[#2f80ed] text-white p-3 rounded-r-xl">
+        Search
       </button>
     </div>
   </div>

@@ -32,7 +32,7 @@ import { Carousel, Typography } from "@material-tailwind/react";
 export function CarouselDefault() {
   return (
     <div className=" flex w-full h-96 justify-center  ">
-      <Carousel autoplay={true} className="rounded-xl h-auto w-full  ">
+      <Carousel autoplay={true} loop={true} className="rounded-xl h-auto w-full  ">
         <div className="relative h-full w-full">
           <img
             src="/src/assets/dinner.jpg"

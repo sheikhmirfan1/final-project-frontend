@@ -1,25 +1,56 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import { Footer } from "../components/Footer";
+import { useState } from "react";
+import axios from "axios";
 
 export function SimpleRegistrationForm() {
+  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [phone, setPhone] = useState(null);
+  const [people, setPeople] = useState(null);
+  const [date, setDate] = useState(null);
+
+  const postReservation = async (e) => {
+    e.preventDefault();
+    try {
+      const createReservation = await axios.post(
+        "http://localhost:3000/api/reservation",
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          people: people,
+          date: date,
+        }
+      );
+      console.log(createReservation);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
-      <div className=" text-center">
-        <Card color="white" shadow={false} className="place-items-center">
+      <div className=" w-full text-center">
+        <Card className="place-items-center">
           <Typography variant="h4" color="blue-gray">
             Table Reservation
           </Typography>
           <Typography color="gray" className="mt-1 font-normal">
             🍽️ Online Reservation 🍽️
           </Typography>
-          <form className="mt-8 mb-2 w-full max-w-screen-lg sm:w-96">
+          <form
+            onSubmit={postReservation}
+            className="mt-8 mb-2 w-full max-w-screen-lg sm:w-96"
+          >
             <div className="mb-1 flex flex-wrap justify-evenly gap-4">
               <Typography variant="h6" color="blue-gray" className="-mb-3">
                 Your Name
               </Typography>
               <Input
+                onChange={(e) => setName(e.target.value)}
                 size="lg"
-                placeholder="name@mail.com"
+                placeholder="name"
                 required="true"
                 className=" shadow-sm  !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
@@ -27,6 +58,7 @@ export function SimpleRegistrationForm() {
                 Your Email
               </Typography>
               <Input
+                onChange={(e) => setEmail(e.target.value)}
                 size="lg"
                 placeholder="name@mail.com"
                 required="true"
@@ -36,6 +68,7 @@ export function SimpleRegistrationForm() {
                 Phone
               </Typography>
               <Input
+                onChange={(e) => setPhone(e.target.value)}
                 type="telephone"
                 size="lg"
                 placeholder="+1 234 567 890"
@@ -46,6 +79,7 @@ export function SimpleRegistrationForm() {
                 People
               </Typography>
               <Input
+                onChange={(e) => setPeople(e.target.value)}
                 type="number"
                 size="lg"
                 placeholder="1"
@@ -55,15 +89,15 @@ export function SimpleRegistrationForm() {
                 Date &amp; time
               </Typography>
               <Input
+                onChange={(e) => setDate(e.target.value)}
                 type="datetime-local"
                 size="lg"
                 placeholder="2021-06-01T08:30"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
-              
             </div>
 
-            <Button className="mt-6 bg-blue-600" fullWidth>
+            <Button className="mt-6 bg-blue-600" fullWidth="auto" type="submit">
               Book Now
             </Button>
           </form>
