@@ -6,7 +6,7 @@ const SearchBar = () => (
       <input
         type="text"
         placeholder="Search"
-        className="w-full text-white p-3 rounded-l-xl focus:outline-none"
+        className="w-full text-black p-3 rounded-l-xl focus:outline-none"
       />
       <button className="bg-[#2f80ed] text-white p-3 rounded-r-xl">
         Search
