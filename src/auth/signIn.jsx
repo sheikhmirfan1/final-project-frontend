@@ -9,6 +9,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 export function LoginCard() {
   const navigate = useNavigate();
