@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Map, Marker } from "pigeon-maps";
 
 export function MyMap() {

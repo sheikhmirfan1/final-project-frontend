@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import {RegistrationForm} from "../auth/loginIn.jsx";
-import {LoginCard} from "../auth/signIn.jsx";
+import { useNavigate } from "react-router-dom";
 
 
 import React from "react";
@@ -14,6 +13,7 @@ import {
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     window.addEventListener(
@@ -80,11 +80,21 @@ export function StickyNavbar() {
         <div className="flex items-center gap-4">
           <div className="mr-4 hidden lg:block">{navList}</div>
           <div className="flex items-center gap-x-1">
-            <Button color="blue" size="sm" className="hidden lg:inline-block">
-              <span>Log In</span>
+            <Button
+              color="blue"
+              size="sm"
+              className="hidden lg:inline-block"
+              onClick={() => navigate("/register")}
+            >
+              Resister
             </Button>
-            <Button color="blue" size="sm" className="hidden lg:inline-block">
-              <span>Sign in</span>
+            <Button
+              color="blue"
+              size="sm"
+              className="hidden lg:inline-block"
+              onClick={() => navigate("/signIn")}
+            >
+              Sign in
             </Button>
           </div>
           <IconButton
@@ -129,26 +139,23 @@ export function StickyNavbar() {
       <MobileNav open={openNav}>
         {navList}
         <div className="flex items-center gap-x-1">
-         
           <Button
             fullWidth
             color="blue"
             size="sm"
             type="submit"
-            onClick={() => {setOpenNav(true)
-              return <RegistrationForm />;
-            }}
+            onClick={() => navigate("/register")}
           >
-            Log In
+            Register
           </Button>
-          <Button 
-          fullWidth color="blue"
-          size="sm"
-           type="submit" 
-           onClick={() => { setOpenNav(true)
-            return <LoginCard />; }} >
-           
-           Sign in
+          <Button
+            fullWidth
+            color="blue"
+            size="sm"
+            type="submit"
+            onClick={() => navigate("/signIn")}
+          >
+            Sign in
           </Button>
         </div>
       </MobileNav>

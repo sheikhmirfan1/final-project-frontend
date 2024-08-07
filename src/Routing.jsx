@@ -5,6 +5,10 @@ import OrderPage from "./orderForm/OrderPage.jsx";
 import ContactUs from "./contactUs/contactUs.jsx";
 import About from "./About/aboutUs.jsx";
 import {SimpleRegistrationForm} from "./Reservation/booking.jsx";
+import {Register} from "./auth/register.jsx";
+import {LoginCard} from "./auth/signIn.jsx";
+
+
 
 const Routing = () => {
   return (
@@ -16,6 +20,8 @@ const Routing = () => {
         <Route path="/Reservation" element={<SimpleRegistrationForm />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUS" element={<About />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/signIn" element={<LoginCard />} />
 
         <Route path="*" element={<p>404 Not Found</p>} />
       </Routes>
