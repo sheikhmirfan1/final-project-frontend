@@ -1,5 +1,5 @@
 import SearchBar from "./components/SearchBar.jsx";
-import BackGroundImage from "./assets/image_6.jpg";
+// import BackGroundImage from "./assets/image_6.jpg";
 import Card from "./pageCard/Card.jsx";
 import {Footer} from "./components/Footer.jsx";
 import {CarouselDefault} from "./components/Slider.jsx";
@@ -12,7 +12,9 @@ const Home = () => (
       <div className="w-full flex overflow-hidden relative flex-col justify-end  px-14  pb-6 rounded-xl">
         <img
           loading="Hero"
-          src={BackGroundImage}
+          // src={BackGroundImage}
+          
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/190d4fa0114abd59f5533586e64e517bd38aa29c22746561ae607b46e73368af?apiKey=19e7bba656cf4334ab650b33c0aad2c0&&apiKey=19e7bba656cf4334ab650b33c0aad2c0"
           className="  object-cover opacity-90 w-full h-full absolute top-0 left-0 z-0"
           alt="Background image of a home"
         />
