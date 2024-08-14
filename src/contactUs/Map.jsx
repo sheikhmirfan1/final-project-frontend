@@ -6,7 +6,7 @@ export function MyMap() {
   const color = `hsl(${hue % 360}deg 39% 70%)`;
 
   return (
-    <Map height={500} defaultCenter={[50.879, 4.6997]} defaultZoom={11}>
+    <Map width={900} height={500} defaultCenter={[50.879, 4.6997]} defaultZoom={11}>
       <Marker
         width={50}
         anchor={[50.879, 4.6997]}

@@ -97,7 +97,7 @@ export default function OrderPage() {
                 <img
                   alt={product.image}
                   src={product.image}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  className="h-full w-full object-cover object-center lg:h-52 lg:w-full"
                 />
               </div>
               <div className="mt-4 flex justify-between">
@@ -108,7 +108,7 @@ export default function OrderPage() {
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                   <p className="text-sm font-medium text-gray-900">
-                    {product.price}
+                    € {product.price}
                   </p>
                 </div>
                 <div>
@@ -116,20 +116,20 @@ export default function OrderPage() {
                     name="number"
                     className="border-solid border-2 border-sky-500"
                   >
-                    {[...Array(9).keys()].map((num) => (
+                    {[...Array(10).keys()].map((num) => (
                       <option key={num + 1} value={num + 1}>
                         {num + 1}
                       </option>
                     ))}
                   </select>
-                  <button
-                    type="button"
-                    className="ml-10 w-32 bg-blue-500 text-white px-4 py-2 rounded-md"
-                  >
-                    Order
-                  </button>
                 </div>
               </div>
+              <button
+                type="button"
+                className="ml-10 w-32 bg-blue-500 text-white py-2 rounded-md"
+              >
+                ADD TO CART
+              </button>
             </div>
           ))}
         </div>

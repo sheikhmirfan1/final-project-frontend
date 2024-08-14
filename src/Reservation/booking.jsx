@@ -31,12 +31,17 @@ export function SimpleRegistrationForm() {
 
   return (
     <>
-      <div className=" w-full text-center">
-        <Card className="place-items-center">
-          <Typography variant="h4" color="blue-gray">
+      <div className=" w-full text-center ">
+        <Card className="place-items-center mt-2 mb-2">
+          <img
+            src="/src/assets/capi.png"
+            className="  object-cover opacity-15 w-full h-full absolute top-0 left-0 z-0"
+            alt="Background image of a home"
+          />
+          <Typography variant="h4" color="black">
             Table Reservation
           </Typography>
-          <Typography color="gray" className="mt-1 font-normal">
+          <Typography color="black" className="mt-1 font-medium">
             🍽️ Online Reservation 🍽️
           </Typography>
           <form
@@ -44,7 +49,7 @@ export function SimpleRegistrationForm() {
             className="mt-8 mb-2 w-full max-w-screen-lg sm:w-96"
           >
             <div className="mb-1 flex flex-wrap justify-evenly gap-4">
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
+              <Typography variant="h6" color="black" className="-mb-3">
                 Your Name
               </Typography>
               <Input
@@ -54,7 +59,7 @@ export function SimpleRegistrationForm() {
                 required="true"
                 className=" shadow-sm  !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
+              <Typography variant="h6" color="black" className="-mb-3">
                 Your Email
               </Typography>
               <Input
@@ -64,7 +69,7 @@ export function SimpleRegistrationForm() {
                 required="true"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
+              <Typography variant="h6" color="black" className="-mb-3">
                 Phone
               </Typography>
               <Input
@@ -75,7 +80,7 @@ export function SimpleRegistrationForm() {
                 required="true"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
+              <Typography variant="h6" color="black" className="-mb-3">
                 People
               </Typography>
               <Input
@@ -85,7 +90,7 @@ export function SimpleRegistrationForm() {
                 placeholder="1"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
+              <Typography variant="h6" color="black" className="-mb-3">
                 Date &amp; time
               </Typography>
               <Input

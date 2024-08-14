@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
+
+
 import React from "react";
 import {
   Navbar,
@@ -65,13 +67,16 @@ export function StickyNavbar() {
         <Link to="/aboutUS">About Us</Link>
       </Typography>
       <svg
-        className="w-6 h-6 text-gray-800 dark:text-white"
+        className="w-6 h-6 text-red-800 dark:text-white"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
         fill="none"
         viewBox="0 0 24 24"
+        stroke="currentColor"
+        onClick={() => navigate("/cart")}
+
       >
         <path
           stroke="currentColor"
@@ -85,33 +90,33 @@ export function StickyNavbar() {
   );
 
   return (
-    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-white">
+    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-whit-gray-100 bg-slate-200 ">
       <div className="flex items-center justify-evenly text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          Base Logo
+          <Link to="/">Base Logo</Link>
         </Typography>
         <div className="flex items-center gap-4">
           <div className="mr-4 hidden lg:block">{navList}</div>
           <div className="flex items-center gap-x-1">
-            <Button
+            {/* <Button
               color="blue"
               size="sm"
               className="hidden lg:inline-block"
               onClick={() => navigate("/register")}
             >
               Resister
-            </Button>
+            </Button> */}
             <Button
               color="blue"
               size="sm"
               className="hidden lg:inline-block"
               onClick={() => navigate("/signIn")}
             >
-              Sign in
+              Order
             </Button>
           </div>
           <IconButton
@@ -156,7 +161,7 @@ export function StickyNavbar() {
       <Collapse open={openNav}>
         {navList}
         <div className="flex items-center gap-x-1">
-          <Button
+          {/* <Button
             fullWidth
             color="blue"
             size="sm"
@@ -164,7 +169,7 @@ export function StickyNavbar() {
             onClick={() => navigate("/register")}
           >
             Register
-          </Button>
+          </Button> */}
           <Button
             fullWidth
             color="blue"
@@ -172,7 +177,7 @@ export function StickyNavbar() {
             type="submit"
             onClick={() => navigate("/signIn")}
           >
-            Sign in
+            Order
           </Button>
         </div>
       </Collapse>
