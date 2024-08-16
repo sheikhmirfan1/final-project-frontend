@@ -10,6 +10,12 @@ export default function OrderPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [order, setOrder] = useState([])
+  const [address, setAddress] = useState({
+    name : '',
+    location : '',
+    phone : ''
+  })
 
   const fetchProducts = async () => {
     try {
@@ -23,6 +29,20 @@ export default function OrderPage() {
       setLoading(false);
     }
   };
+
+  const createOrder = async (e) => {
+    e.preventDefault()
+    try {
+      const newOrder = await axios.post(`http://localhost:3000/api/orders`, {products : order, address : address} )
+      if(newOrder.data){
+        alert('Order created')
+      }
+    }
+    catch(err) {
+      console.log(err);
+    }
+  }
+
 
   useEffect(() => {
     fetchProducts();
@@ -42,14 +62,38 @@ export default function OrderPage() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
+  console.log(order, address)
+
   return (
     <div className="bg-white w-full">
       <div className="w-full ">
         <h1 className="w-full text-center font-bold text-4xl">Order</h1>
         <img src="/src/assets/order1.png" alt="" className="w-64 mx-auto" />
       </div>
+
       <div className="w-full">
         <h1 className="text-center font-bold text-3xl mb-14">Category</h1>
+        {order.length > 0 && (
+          <>
+            {order.map(product => {
+              return (
+                <>
+                  <div>
+                    {product.quantity} {product.name}
+                  </div>
+                </>
+              )
+            })}
+            <form onSubmit={createOrder}>
+              <input placeholder="name" required onChange={e => setAddress({...address, name : e.target.value})} />
+              <input placeholder="location" required onChange={e => setAddress({...address, location : e.target.value})} />
+              <input placeholder="number" required onChange={e => setAddress({...address, phone : e.target.value})} />
+              <button type="submit">
+                Create an order
+              </button>
+            </form>
+          </>
+        )}
         <ButtonGroup variant="text" className="flex justify-evenly">
           <Button
             className="text-1xl"
@@ -127,7 +171,7 @@ export default function OrderPage() {
               <button
                 type="button"
                 className="ml-10 w-32 bg-blue-500 text-white py-2 rounded-md"
-                onClick={() => console.log("clicked")}
+                onClick={() => setOrder([...order, product])}
               >
                 ADD TO CART
               </button>
