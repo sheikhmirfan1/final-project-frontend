@@ -114,7 +114,7 @@ export function StickyNavbar() {
               color="blue"
               size="sm"
               className="hidden lg:inline-block"
-              onClick={() => navigate("/signIn")}
+              onClick={() => navigate("/cart")}
             >
               Order
             </Button>
@@ -175,7 +175,7 @@ export function StickyNavbar() {
             color="blue"
             size="sm"
             type="submit"
-            onClick={() => navigate("/signIn")}
+            onClick={() => navigate("/cart")}
           >
             Order
           </Button>

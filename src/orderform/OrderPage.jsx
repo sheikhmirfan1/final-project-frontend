@@ -127,6 +127,7 @@ export default function OrderPage() {
               <button
                 type="button"
                 className="ml-10 w-32 bg-blue-500 text-white py-2 rounded-md"
+                onClick={() => console.log("clicked")}
               >
                 ADD TO CART
               </button>
