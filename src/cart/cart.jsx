@@ -107,9 +107,11 @@ export default function ShoppingCart() {
                                       type="button"
                                       className="font-medium text-indigo-600 hover:text-indigo-500"
                                     onClick={() => {
+                                      console.log(product._id)
                                       const updatedProductsOrder = productsOrder.filter(
-                                        (product) => product.id !== product.id
+                                        (productOrder) => productOrder._id !== product._id
                                       );
+                                      
                                       setProductsOrder(updatedProductsOrder);
                                     }}
                                     >

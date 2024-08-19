@@ -13,11 +13,12 @@ export default function OrderPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [order, setOrder] = useState([])
   const [address, setAddress] = useState({
-    name : '',
-    location : '',
-    phone : ''
+    name: '',
+    location: '',
+    phone: ''
   })
-  const {productsOrder, setProductsOrder} = useOrder()
+  const { productsOrder, setProductsOrder } = useOrder()
+  let updatedProduct
 
 
   const fetchProducts = async () => {
@@ -36,12 +37,12 @@ export default function OrderPage() {
   const createOrder = async (e) => {
     e.preventDefault()
     try {
-      const newOrder = await axios.post(`http://localhost:3000/api/orders`, {products : order, address : address} )
-      if(newOrder.data){
+      const newOrder = await axios.post(`http://localhost:3000/api/orders`, { products: order, address: address })
+      if (newOrder.data) {
         alert('Order created')
       }
     }
-    catch(err) {
+    catch (err) {
       console.log(err);
     }
   }
@@ -88,9 +89,9 @@ export default function OrderPage() {
               )
             })}
             <form onSubmit={createOrder}>
-              <input placeholder="name" required onChange={e => setAddress({...address, name : e.target.value})} />
-              <input placeholder="location" required onChange={e => setAddress({...address, location : e.target.value})} />
-              <input placeholder="number" required onChange={e => setAddress({...address, phone : e.target.value})} />
+              <input placeholder="name" required onChange={e => setAddress({ ...address, name: e.target.value })} />
+              <input placeholder="location" required onChange={e => setAddress({ ...address, location: e.target.value })} />
+              <input placeholder="number" required onChange={e => setAddress({ ...address, phone: e.target.value })} />
               <button type="submit">
                 Create an order
               </button>
@@ -164,14 +165,14 @@ export default function OrderPage() {
                     className="border-solid border-2 border-sky-500"
                     onChange={(e) => {
                       const quantity = parseInt(e.target.value);
-                      const updatedProduct = { ...product, quantity };
-                      setProductsOrder([...productsOrder, updatedProduct]);
+                      updatedProduct = { ...product, quantity };
+                      // setProductsOrder([...productsOrder, updatedProduct]);
                     }}
                   >
                     {[...Array(10).keys()].map((num) => (
                       <option key={num + 1} value={num + 1}>
                         {num + 1}
-                        
+
                       </option>
                     ))}
                   </select>
@@ -180,9 +181,9 @@ export default function OrderPage() {
               <button
                 type="button"
                 className="ml-10 w-32 bg-blue-500 text-white py-2 rounded-md"
-                onClick={() => setProductsOrder([...productsOrder, product])}
+                onClick={() => setProductsOrder([...productsOrder, updatedProduct ? updatedProduct : product])}
               >
-                ADD TO CART
+                ADD TO ORDER
               </button>
             </div>
           ))}
