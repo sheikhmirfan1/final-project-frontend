@@ -8,6 +8,8 @@ import {
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
+import { useOrder } from "../context/orderContext";
+import axios from 'axios'
 
 const products = [
   {
@@ -34,12 +36,34 @@ const products = [
     imageAlt:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
- 
+
 ];
 
 export default function ShoppingCart() {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
   const [open, setOpen] = useState(true);
+  const { productsOrder, setProductsOrder } = useOrder()
+  const [address, setAddress] = useState({
+    name : '',
+    location : '',
+    phone : ''
+  })
+
+
+
+  const createOrder = async (e) => {
+    e.preventDefault()
+    try {
+      const newOrder = await axios.post(`http://localhost:3000/api/orders`, { products: productsOrder, address: address })
+      if (newOrder.data) {
+        alert('Order created')
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -80,12 +104,12 @@ export default function ShoppingCart() {
                         role="list"
                         className="-my-6 divide-y divide-gray-200"
                       >
-                        {products.map((product) => (
+                        {productsOrder.length > 0 && productsOrder.map((product) => (
                           <li key={product.id} className="flex py-6">
                             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                               <img
-                                alt={product.imageAlt}
-                                src={product.imageSrc}
+                                alt={product.description}
+                                src={product.image}
                                 className="h-full w-full object-cover object-center"
                               />
                             </div>
@@ -98,9 +122,7 @@ export default function ShoppingCart() {
                                   </h3>
                                   <p className="ml-4">{product.price}</p>
                                 </div>
-                                <p className="mt-1 text-sm text-gray-500">
-                                  {product.color}
-                                </p>
+
                               </div>
                               <div className="flex flex-1 items-end justify-between text-sm">
                                 <p className="text-gray-500">
@@ -123,6 +145,14 @@ export default function ShoppingCart() {
                     </div>
                   </div>
                 </div>
+                <form onSubmit={createOrder}>
+              <input placeholder="name" required onChange={e => setAddress({...address, name : e.target.value})} />
+              <input placeholder="location" required onChange={e => setAddress({...address, location : e.target.value})} />
+              <input placeholder="number" required onChange={e => setAddress({...address, phone : e.target.value})} />
+              <button type="submit">
+                Create an order
+              </button>
+            </form>
 
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
@@ -134,7 +164,7 @@ export default function ShoppingCart() {
                   </p>
                   <div className="mt-6">
                     <a
-                      href="#"
+                      onClick={createOrder}
                       className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     >
                       Checkout

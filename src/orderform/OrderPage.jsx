@@ -2,6 +2,7 @@ import { Footer } from "../components/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ButtonGroup, Button } from "@material-tailwind/react";
+import { useOrder } from "../context/orderContext";
 
 
 export default function OrderPage() {
@@ -16,6 +17,8 @@ export default function OrderPage() {
     location : '',
     phone : ''
   })
+  const {productsOrder, setProductsOrder} = useOrder()
+
 
   const fetchProducts = async () => {
     try {
@@ -63,7 +66,7 @@ export default function OrderPage() {
   if (error) return <div>Error: {error.message}</div>;
 
   console.log(order, address)
-
+  console.log(products)
   return (
     <div className="bg-white w-full">
       <div className="w-full ">
@@ -171,7 +174,7 @@ export default function OrderPage() {
               <button
                 type="button"
                 className="ml-10 w-32 bg-blue-500 text-white py-2 rounded-md"
-                onClick={() => setOrder([...order, product])}
+                onClick={() => setProductsOrder([...productsOrder, product])}
               >
                 ADD TO CART
               </button>

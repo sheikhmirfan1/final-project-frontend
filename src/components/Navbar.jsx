@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { useOrder } from "../context/orderContext";
 
 
 
@@ -16,6 +16,7 @@ import {
 export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
   const navigate = useNavigate();
+  const {productsOrder} = useOrder()
 
   React.useEffect(() => {
     window.addEventListener(
@@ -86,6 +87,8 @@ export function StickyNavbar() {
           d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
         />
       </svg>
+      <p>{productsOrder.length > 0 ? productsOrder.length : ''}</p>
+
     </ul>
   );
 
