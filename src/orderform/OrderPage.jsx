@@ -166,6 +166,7 @@ export default function OrderPage() {
                     {[...Array(10).keys()].map((num) => (
                       <option key={num + 1} value={num + 1}>
                         {num + 1}
+                        
                       </option>
                     ))}
                   </select>

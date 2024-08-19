@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
     try {
       // Check if cart exists for the user
       const existingCart = await axios.get(
-        `http://localhost:8000/api/cart/user/${userID}`
+        `http://localhost:3000/api/cart/user/${userID}`
       );
       if (existingCart.data) {
         const cartId = existingCart.data._id;
@@ -22,11 +22,11 @@ export const CartProvider = ({ children }) => {
 
         // Check if the product already exists in the cart
         const productIndex = updatedProducts.findIndex(
-          (product) => product.product._id == productId
+          (product) => product.product._id == product
         );
 
         if (productIndex > -1) {
-          updatedProducts[productIndex].quantity = parseInt(productQuantity);
+          updatedProducts[productIndex].quantity += parseInt(productQuantity);
         } else {
           updatedProducts.push({
             product: productId,
@@ -37,7 +37,7 @@ export const CartProvider = ({ children }) => {
 
         console.log(updatedProducts);
 
-        await axios.put(`http://localhost:8000/api/cart/${cartId}`, {
+        await axios.put(`http://localhost:3000/api/cart/${cartId}`, {
           products: updatedProducts,
         });
         alert("Product has been added");
@@ -47,7 +47,7 @@ export const CartProvider = ({ children }) => {
           userId: userID,
           products: [
             {
-              productId: productId,
+              productId: product,
               quantity: productQuantity,
               price: productPrice,
             },

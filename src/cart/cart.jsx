@@ -11,33 +11,6 @@ import { useNavigate } from "react-router-dom";
 import { useOrder } from "../context/orderContext";
 import axios from 'axios'
 
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-
-];
 
 export default function ShoppingCart() {
   let navigate = useNavigate();
@@ -104,64 +77,90 @@ export default function ShoppingCart() {
                         role="list"
                         className="-my-6 divide-y divide-gray-200"
                       >
-                        {productsOrder.length > 0 && productsOrder.map((product) => (
-                          <li key={product.id} className="flex py-6">
-                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                              <img
-                                alt={product.description}
-                                src={product.image}
-                                className="h-full w-full object-cover object-center"
-                              />
-                            </div>
-
-                            <div className="ml-4 flex flex-1 flex-col">
-                              <div>
-                                <div className="flex justify-between text-base font-medium text-gray-900">
-                                  <h3>
-                                    <a href={product.href}>{product.name}</a>
-                                  </h3>
-                                  <p className="ml-4">{product.price}</p>
-                                </div>
-
+                        {productsOrder.length > 0 &&
+                          productsOrder.map((product) => (
+                            <li key={product.id} className="flex py-6">
+                              <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                <img
+                                  alt={product.description}
+                                  src={product.image}
+                                  className="h-full w-full object-cover object-center"
+                                />
                               </div>
-                              <div className="flex flex-1 items-end justify-between text-sm">
-                                <p className="text-gray-500">
-                                  Qty {product.quantity}
-                                </p>
 
-                                <div className="flex">
-                                  <button
-                                    type="button"
-                                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                                  >
-                                    Remove
-                                  </button>
+                              <div className="ml-4 flex flex-1 flex-col">
+                                <div>
+                                  <div className="flex justify-between text-base font-medium text-gray-900">
+                                    <h3>
+                                      <a href={product.href}>{product.name}</a>
+                                    </h3>
+                                    <p className="ml-4">€{product.price}</p>
+                                  </div>
+                                </div>
+                                <div className="flex flex-1 items-end justify-between text-sm">
+                                  <p className="text-gray-500">
+                                    Qty {product.quantity}
+                                  </p>
+
+                                  <div className="flex">
+                                    <button
+                                      type="button"
+                                      className="font-medium text-indigo-600 hover:text-indigo-500"
+                                      onClick={() => {
+                                        setProductsOrder(
+                                          productsOrder.filter((item) => item.id !== product.id)
+                                        );
+                                      }}
+                                    >
+                                      Remove
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </li>
-                        ))}
+                            </li>
+                          ))}
                       </ul>
                     </div>
                   </div>
                 </div>
-                <form onSubmit={createOrder}>
-              <input placeholder="name" required onChange={e => setAddress({...address, name : e.target.value})} />
-              <input placeholder="location" required onChange={e => setAddress({...address, location : e.target.value})} />
-              <input placeholder="number" required onChange={e => setAddress({...address, phone : e.target.value})} />
-              <button type="submit">
-                Create an order
-              </button>
-            </form>
+                <div className="flex justify-between text-base font-medium text-gray-900">
+                  <p>Subtotal</p>
+                  <p>
+                    €
+                    {productsOrder.reduce(
+                      (acc, item) => acc + item.quantity * item.price,
+                      0
+                    )}
+                  </p>
+                </div>
+                <p className="mt-0.5 text-sm text-gray-500">
+                  Shipping and taxes calculated at checkout.
+                </p>
 
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
-                  <div className="flex justify-between text-base font-medium text-gray-900">
-                    <p>Subtotal</p>
-                    <p>$262.00</p>
-                  </div>
-                  <p className="mt-0.5 text-sm text-gray-500">
-                    Shipping and taxes calculated at checkout.
-                  </p>
+                  <form onSubmit={createOrder}>
+                    <input
+                      placeholder="name"
+                      required="required"
+                      onChange={(e) =>
+                        setAddress({ ...address, name: e.target.value })
+                      }
+                    />
+                    <input
+                      placeholder="location"
+                      required="required"
+                      onChange={(e) =>
+                        setAddress({ ...address, location: e.target.value })
+                      }
+                    />
+                    <input
+                      placeholder="number"
+                      required="required"
+                      onChange={(e) =>
+                        setAddress({ ...address, phone: e.target.value })
+                      }
+                    />
+                  </form>
                   <div className="mt-6">
                     <a
                       onClick={createOrder}
@@ -176,7 +175,6 @@ export default function ShoppingCart() {
                       <button
                         type="button"
                         onClick={() => navigate("/order")}
-
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Continue Shopping
