@@ -162,6 +162,11 @@ export default function OrderPage() {
                   <select
                     name="number"
                     className="border-solid border-2 border-sky-500"
+                    onChange={(e) => {
+                      const quantity = parseInt(e.target.value);
+                      const updatedProduct = { ...product, quantity };
+                      setProductsOrder([...productsOrder, updatedProduct]);
+                    }}
                   >
                     {[...Array(10).keys()].map((num) => (
                       <option key={num + 1} value={num + 1}>

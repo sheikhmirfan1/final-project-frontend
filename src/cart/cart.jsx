@@ -106,11 +106,12 @@ export default function ShoppingCart() {
                                     <button
                                       type="button"
                                       className="font-medium text-indigo-600 hover:text-indigo-500"
-                                      onClick={() => {
-                                        setProductsOrder(
-                                          productsOrder.filter((item) => item.id !== product.id)
-                                        );
-                                      }}
+                                    onClick={() => {
+                                      const updatedProductsOrder = productsOrder.filter(
+                                        (product) => product.id !== product.id
+                                      );
+                                      setProductsOrder(updatedProductsOrder);
+                                    }}
                                     >
                                       Remove
                                     </button>
@@ -177,7 +178,7 @@ export default function ShoppingCart() {
                         onClick={() => navigate("/order")}
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
-                        Continue Shopping
+                        Continue Order
                         <span aria-hidden="true"> &rarr;</span>
                       </button>
                     </p>
