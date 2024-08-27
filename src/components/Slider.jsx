@@ -32,7 +32,11 @@ import { Carousel, Typography } from "@material-tailwind/react";
 export function CarouselDefault() {
   return (
     <div className=" flex w-full h-96 justify-center  ">
-      <Carousel autoplay={true} loop={true} className="rounded-xl h-auto w-full  ">
+      <Carousel
+        autoplay={true}
+        loop={true}
+        className="rounded-xl h-auto w-full  "
+      >
         <div className="relative h-full w-full">
           <img
             src="/src/assets/dinner.jpg"
@@ -44,16 +48,17 @@ export function CarouselDefault() {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                className="mb-4 text-2xl md:text-3xl lg:text-4xl"
               >
-                The Beauty of Nature
+                Find Your Best Healthy & Tasty Food.
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                It is not so much for its beauty that the forest makes a claim
+                Our Restaurant is the best as like delicious food, nutrition
+                food
               </Typography>
             </div>
           </div>
@@ -69,16 +74,18 @@ export function CarouselDefault() {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                className="mb-4 text-2xl md:text-3xl lg:text-4xl"
               >
-                The Beauty of Nature
+                {" "}
+                Find Your Best Healthy & Tasty Food.
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                It is not so much for its beauty that the forest makes a claim
+                Our Restaurant is the best as like delicious food, nutrition
+                food
               </Typography>
             </div>
           </div>
@@ -94,16 +101,18 @@ export function CarouselDefault() {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                className="mb-4 text-2xl md:text-3xl lg:text-4xl"
               >
-                The Beauty of Nature
+                {" "}
+                Find Your Best Healthy & Tasty Food.
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                It is not so much for its beauty that the forest makes a claim
+                Our Restaurant is the best as like delicious food, nutrition
+                food
               </Typography>
             </div>
           </div>

@@ -1,56 +1,101 @@
-
+import { Link } from "react-router-dom";
 
 import { Typography } from "@material-tailwind/react";
- 
-const LINKS = [
-  {
-    title: "Product",
-    items: ["Overview", ""],
-  },
-  {
-    title: "About Us",
-    items: ["About us", "Careers", "Blog"],
-  },
-  {
-    title: "Resource",
-    items: [  "Events", "Help center"],
-  },
-];
- 
+
+// const LINKS = [
+//   {
+//     title: "Product",
+//     items: ["Overview", ""],
+//   },
+//   {
+//     title: "About Us",
+//     items: ["About us", "Careers", "Blog"],
+//   },
+//   {
+//     title: "Resource",
+//     items: [  "Events", "Help center"],
+//   },
+// ];
+
 const currentYear = new Date().getFullYear();
- 
+
 export function Footer() {
   return (
     <footer className=" relative w-full bg-black">
       <div className=" mx-auto w-full max-w-7xl px-8">
         <div className="pt-10 grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <Typography variant="h5" className="mb-6 text-white">
-            Logo Base
+            Royal Restaurant
           </Typography>
           <div className="grid grid-cols-3 justify-between gap-4">
-            {LINKS.map(({ title, items }) => (
-              <ul key={title}>
+            <ul>
+              <Typography
+                variant="small"
+                color="white"
+                className="mb-3 font-medium opacity-100"
+              ></Typography>
+
+              <li>
                 <Typography
-                  variant="small"
+                  as="a"
+                  href="#"
                   color="white"
-                  className="mb-3 font-medium opacity-100"
+                  className="py-1.5 font-normal transition-colors hover:text-blue-gray-400"
                 >
-                  {title}
+                  Overview
                 </Typography>
-                {items.map((link) => (
-                  <li key={link}>
-                    <Typography
-                      as="a"
-                      href="#"
-                      color="white"
-                      className="py-1.5 font-normal transition-colors hover:text-blue-gray-400"
-                    >
-                      {link}
-                    </Typography>
-                  </li>
-                ))}
-              </ul>
-            ))}
+              </li>
+              <li>
+                <Typography
+                  as="a"
+                  href="#"
+                  color="white"
+                  className="py-1.5 font-normal transition-colors hover:text-blue-gray-400"
+                >
+                  <Link to="/Reservation">Reservation</Link>
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="a"
+                  href="#"
+                  color="white"
+                  className="py-1.5 font-normal transition-colors hover:text-blue-gray-400"
+                >
+                  <Link to="/order">Order</Link>
+                </Typography>
+              </li>
+            </ul>
+
+            <ul>
+              <Typography
+                
+                color="white"
+                className="mb-3 font-medium opacity-100"
+              >
+              </Typography>
+
+              <li>
+                <Typography
+                  as="a"
+                  href="#"
+                  color="white"
+                  className="py-1.5 font-normal transition-colors hover:text-blue-gray-400"
+                >
+                  <Link to="/aboutUS">About Us</Link>
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="a"
+                  href="#"
+                  color="white"
+                  className="py-1.5 font-normal transition-colors hover:text-blue-gray-400"
+                >
+                  Careers
+                </Typography>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
@@ -60,8 +105,7 @@ export function Footer() {
           >
             &copy; {currentYear}{" "}
             {/* <a href="https://material-tailwind.com/">Material Tailwind</a> */}
-            . All
-            Rights Reserved.
+            . All Rights Reserved.
           </Typography>
           <div className="flex gap-4 text-white sm:justify-center">
             <Typography

@@ -106,14 +106,16 @@ export default function ShoppingCart() {
                                     <button
                                       type="button"
                                       className="font-medium text-indigo-600 hover:text-indigo-500"
-                                    onClick={() => {
-                                      console.log(product._id)
-                                      const updatedProductsOrder = productsOrder.filter(
-                                        (productOrder) => productOrder._id !== product._id
-                                      );
-                                      
-                                      setProductsOrder(updatedProductsOrder);
-                                    }}
+                                      onClick={() => {
+                                        console.log(product._id);
+                                        const updatedProductsOrder =
+                                          productsOrder.filter(
+                                            (productOrder) =>
+                                              productOrder._id !== product._id
+                                          );
+
+                                        setProductsOrder(updatedProductsOrder);
+                                      }}
                                     >
                                       Remove
                                     </button>
@@ -140,9 +142,10 @@ export default function ShoppingCart() {
                   Shipping and taxes calculated at checkout.
                 </p>
 
-                <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                <div className="border-t border-gray-400 px-4 py-8 sm:px-6">
                   <form onSubmit={createOrder}>
                     <input
+                      className="mb-4 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="name"
                       required="required"
                       onChange={(e) =>
@@ -150,6 +153,7 @@ export default function ShoppingCart() {
                       }
                     />
                     <input
+                      className="mb-4 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="location"
                       required="required"
                       onChange={(e) =>
@@ -157,6 +161,7 @@ export default function ShoppingCart() {
                       }
                     />
                     <input
+                      className="mb-4 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="number"
                       required="required"
                       onChange={(e) =>
