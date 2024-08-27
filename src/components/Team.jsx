@@ -8,7 +8,7 @@ export default function Team() {
       <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-2 lg:pt-40">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
-            <img src="/public/assets/1.jpg" alt="" className="w-96" />
+            <img src="/src/assets/1.jpg" alt="" className="w-96" />
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               We are a team of professionals and we are here to serve you.
             </h1>
@@ -31,14 +31,14 @@ export default function Team() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                         <img
                           alt=""
-                          src="/public/assets/ice2.png"
+                          src="/src/assets/ice2.png"
                           className="h-full w-full"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="/public/assets/fastfood.jpg"
+                          src="/src/assets/fastfood.jpg"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
@@ -47,21 +47,21 @@ export default function Team() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="/public/assets/cd.jpg"
+                          src="/src/assets/cd.jpg"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="/public/assets/icecreame.jpg"
+                          src="/src/assets/icecreame.jpg"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="/public/assets/gallery1.jpg"
+                          src="/src/assets/gallery1.jpg"
                           className="h-full w-full  object-cover"
                         />
                       </div>
@@ -70,14 +70,14 @@ export default function Team() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="/public/assets/drink.jpg"
+                          src="/src/assets/drink.jpg"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="/public/assets/about.jpg"
+                          src="/src/assets/about.jpg"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
