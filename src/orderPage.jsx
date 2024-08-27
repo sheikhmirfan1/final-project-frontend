@@ -71,7 +71,7 @@ export default function OrderPage() {
     <div className="bg-white w-full">
       <div className="w-full ">
         <h1 className="w-full text-center font-bold text-4xl">Order</h1>
-        <img src="/public/assets/order1.png" alt="" className="w-64 mx-auto" />
+        <img src="/src/assets/order1.png" alt="" className="w-64 mx-auto" />
       </div>
 
       <div className="w-full">
