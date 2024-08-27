@@ -1,5 +1,5 @@
 
-import ReviewCard from "./ReviewCard.jsx";
+import ReviewCard from "../pageCard/ReviewCard.jsx";
 import img1 from "../assets/pic1.png";
 import img2 from "../assets/pic2.png";
 import img3 from "../assets/pic3.png";

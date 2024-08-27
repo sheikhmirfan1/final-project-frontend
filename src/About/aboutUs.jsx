@@ -1,4 +1,4 @@
-import Review from "../components/Review.jsx";
+import Review from "../pageCard/ReviewCard.jsx";
 import { Footer } from "../components/Footer.jsx";
 
 const people = [
