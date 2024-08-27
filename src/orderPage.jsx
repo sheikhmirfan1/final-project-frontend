@@ -1,9 +1,8 @@
-import { Footer } from "../components/Footer.jsx";
+import { Footer } from "./components/Footer.jsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ButtonGroup, Button } from "@material-tailwind/react";
-import { useOrder } from "../context/orderContext.jsx";
-
+import { useOrder } from "./context/orderContext.jsx";
 
 export default function OrderPage() {
   const [products, setProducts] = useState([]);
@@ -11,15 +10,14 @@ export default function OrderPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [order, setOrder] = useState([])
+  const [order, setOrder] = useState([]);
   const [address, setAddress] = useState({
-    name: '',
-    location: '',
-    phone: ''
-  })
-  const { productsOrder, setProductsOrder } = useOrder()
-  let updatedProduct
-
+    name: "",
+    location: "",
+    phone: "",
+  });
+  const { productsOrder, setProductsOrder } = useOrder();
+  let updatedProduct;
 
   const fetchProducts = async () => {
     try {
@@ -35,18 +33,19 @@ export default function OrderPage() {
   };
 
   const createOrder = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const newOrder = await axios.post(`http://localhost:3000/api/orders`, { products: order, address: address })
+      const newOrder = await axios.post(`http://localhost:3000/api/orders`, {
+        products: order,
+        address: address,
+      });
       if (newOrder.data) {
-        alert('Order created')
+        alert("Order created");
       }
-    }
-    catch (err) {
+    } catch (err) {
       console.log(err);
     }
-  }
-
+  };
 
   useEffect(() => {
     fetchProducts();
@@ -66,8 +65,8 @@ export default function OrderPage() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  console.log(order, address)
-  console.log(products)
+  console.log(order, address);
+  console.log(products);
   return (
     <div className="bg-white w-full">
       <div className="w-full ">
@@ -79,22 +78,38 @@ export default function OrderPage() {
         <h1 className="text-center font-bold text-3xl mb-14">Category</h1>
         {order.length > 0 && (
           <>
-            {order.map(product => {
+            {order.map((product) => {
               return (
                 <>
                   <div>
                     {product.quantity} {product.name}
                   </div>
                 </>
-              )
+              );
             })}
             <form onSubmit={createOrder}>
-              <input placeholder="name" required onChange={e => setAddress({ ...address, name: e.target.value })} />
-              <input placeholder="location" required onChange={e => setAddress({ ...address, location: e.target.value })} />
-              <input placeholder="number" required onChange={e => setAddress({ ...address, phone: e.target.value })} />
-              <button type="submit">
-                Create an order
-              </button>
+              <input
+                placeholder="name"
+                required
+                onChange={(e) =>
+                  setAddress({ ...address, name: e.target.value })
+                }
+              />
+              <input
+                placeholder="location"
+                required
+                onChange={(e) =>
+                  setAddress({ ...address, location: e.target.value })
+                }
+              />
+              <input
+                placeholder="number"
+                required
+                onChange={(e) =>
+                  setAddress({ ...address, phone: e.target.value })
+                }
+              />
+              <button type="submit">Create an order</button>
             </form>
           </>
         )}
@@ -172,7 +187,6 @@ export default function OrderPage() {
                     {[...Array(10).keys()].map((num) => (
                       <option key={num + 1} value={num + 1}>
                         {num + 1}
-
                       </option>
                     ))}
                   </select>
@@ -181,7 +195,12 @@ export default function OrderPage() {
               <button
                 type="button"
                 className="ml-10 w-32 bg-blue-500 text-white py-2 rounded-md"
-                onClick={() => setProductsOrder([...productsOrder, updatedProduct ? updatedProduct : product])}
+                onClick={() =>
+                  setProductsOrder([
+                    ...productsOrder,
+                    updatedProduct ? updatedProduct : product,
+                  ])
+                }
               >
                 ADD TO ORDER
               </button>

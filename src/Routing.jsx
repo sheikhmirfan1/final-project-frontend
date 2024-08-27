@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home.jsx";
 import { StickyNavbar } from "./components/Navbar.jsx";
-import OrderPage from "./orderForm/orderPage.jsx";
+import OrderPage from "./orderPage.jsx";
 import ContactUs from "./contactUs/contactUs.jsx";
 import About from "./About/aboutUs.jsx";
 import { SimpleRegistrationForm } from "./Reservation/booking.jsx";
