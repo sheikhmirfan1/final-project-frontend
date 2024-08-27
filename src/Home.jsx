@@ -15,7 +15,7 @@ const Home = () => (
           loop
           muted
           playsInline
-          src="./src/assets/home.mov"
+          src="/src/assets/home.mov"
           className="object-cover brightness-50 opacity-80 w-full h-[548px] top-0 left-0 z-0"
           alt="Background image of a home"
         />
