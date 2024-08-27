@@ -13,23 +13,23 @@ const people = [
   {
     name: "Courtney Henry",
     role: "Chef",
-    imageUrl: "/src/assets/1.jpg",
+    imageUrl: "/1.jpg",
   },
   {
     name: "Tom Cook",
     role: "Chef",
-    imageUrl: "/src/assets/3.jpg",
+    imageUrl: "/3.jpg",
   },
 
   {
     name: "Whitney Francis",
     role: "Chef",
-    imageUrl: "/src/assets/2.jpg",
+    imageUrl: "/2.jpg",
   },
   {
     name: "Kristin Watson",
     role: "Chef",
-    imageUrl: "/src/assets/h3-chef-03.png",
+    imageUrl: "/h3-chef-03.png",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function About() {
     <>
       <div className=" py-24 sm:py-32 relative">
         <img
-          src="/src/assets/myteam.jpg"
+          src="/myteam.jpg"
           className="  object-cover opacity-15 w-full h-full absolute top-0 left-0 z-0"
           alt="Background image of a home"
         />

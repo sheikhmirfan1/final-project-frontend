@@ -39,7 +39,7 @@ export function CarouselDefault() {
       >
         <div className="relative h-full w-full">
           <img
-            src="/src/assets/dinner.jpg"
+            src="/dinner.jpg"
             alt="image 1"
             className="h-full w-full object-cover"
           />
@@ -65,7 +65,7 @@ export function CarouselDefault() {
         </div>
         <div className="relative h-full w-full">
           <img
-            src="/src/assets/dinner1.jpg"
+            src="/dinner1.jpg"
             alt="image 2"
             className="h-full w-full object-cover"
           />
@@ -92,7 +92,7 @@ export function CarouselDefault() {
         </div>
         <div className="relative h-full w-full">
           <img
-            src="/src/assets/lunch2.jpg"
+            src="/lunch2.jpg"
             alt="image 3"
             className="h-full w-full object-cover"
           />
