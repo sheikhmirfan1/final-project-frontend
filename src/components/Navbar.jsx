@@ -100,7 +100,7 @@ export function StickyNavbar() {
           href="#"
           className="w-24 h-10 flex items-center justify-center rounded-full bg-gray-200 text-blue-gray-900"
         >
-          <Link to="/"><img src="/src/assets/llogo.svg" alt="" /></Link>
+          <Link to="/"><img src="/public/assets/llogo.svg" alt="" /></Link>
         </Typography>
         <div className="flex items-center gap-4">
           <div className="mr-4 hidden lg:block">{navList}</div>
