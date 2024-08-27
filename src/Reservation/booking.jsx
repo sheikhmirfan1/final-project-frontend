@@ -34,7 +34,7 @@ export function SimpleRegistrationForm() {
       <div className=" w-full text-center ">
         <Card className="place-items-center mt-2 mb-2">
           <img
-            src="/src/assets/capi.png"
+            src="/capi.png"
             className="  object-cover opacity-15 w-full h-full absolute top-0 left-0 z-0"
             alt="Background image of a home"
           />
