@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router-dom";
 
 
 export default function Team() {
@@ -90,7 +90,7 @@ export default function Team() {
                 href="#"
                 className="inline-block rounded-md border border-transparent bg-blue-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
               >
-                Order Now
+                <Link to="/order">Order Now</Link>
               </a>
             </div>
           </div>

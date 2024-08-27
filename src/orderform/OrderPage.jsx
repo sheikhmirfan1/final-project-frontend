@@ -1,8 +1,8 @@
-import { Footer } from "../components/Footer";
+import { Footer } from "../components/Footer.jsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ButtonGroup, Button } from "@material-tailwind/react";
-import { useOrder } from "../context/orderContext";
+import { useOrder } from "../context/orderContext.jsx";
 
 
 export default function OrderPage() {
