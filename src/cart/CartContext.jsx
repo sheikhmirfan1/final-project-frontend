@@ -37,22 +37,28 @@ export const CartProvider = ({ children }) => {
 
         console.log(updatedProducts);
 
-        await axios.put(`http://localhost:3000/api/cart/${cartId}`, {
-          products: updatedProducts,
-        });
+        await axios.put(
+          `https://final-project-backend-nu.vercel.app/api/carts/${cartId}`,
+          {
+            products: updatedProducts,
+          }
+        );
         alert("Product has been added");
       } else {
         // CREATE THE CART
-        await axios.post(`http://localhost:3000/api/cart`, {
-          userId: userID,
-          products: [
-            {
-              productId: product,
-              quantity: productQuantity,
-              price: productPrice,
-            },
-          ],
-        });
+        await axios.post(
+          `https://final-project-backend-nu.vercel.app/api/carts`,
+          {
+            userId: userID,
+            products: [
+              {
+                productId: product,
+                quantity: productQuantity,
+                price: productPrice,
+              },
+            ],
+          }
+        );
         alert("Product has been added");
       }
     } catch (err) {

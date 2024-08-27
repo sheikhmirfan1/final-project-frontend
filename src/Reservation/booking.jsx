@@ -14,7 +14,7 @@ export function SimpleRegistrationForm() {
     e.preventDefault();
     try {
       const createReservation = await axios.post(
-        "http://localhost:3000/api/reservation",
+        "https://final-project-backend-nu.vercel.app/api/reservation",
         {
           name: name,
           email: email,

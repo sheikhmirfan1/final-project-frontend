@@ -21,7 +21,9 @@ export default function OrderPage() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/products");
+      const response = await axios.get(
+        "https://final-project-backend-nu.vercel.app/api/products"
+      );
       setProducts(response.data);
       setFilteredProducts(response.data);
     } catch (error) {
@@ -35,10 +37,13 @@ export default function OrderPage() {
   const createOrder = async (e) => {
     e.preventDefault();
     try {
-      const newOrder = await axios.post(`http://localhost:3000/api/orders`, {
-        products: order,
-        address: address,
-      });
+      const newOrder = await axios.post(
+        `https://final-project-backend-nu.vercel.app/api/orders`,
+        {
+          products: order,
+          address: address,
+        }
+      );
       if (newOrder.data) {
         alert("Order created");
       }

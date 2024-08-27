@@ -27,7 +27,10 @@ export default function ShoppingCart() {
   const createOrder = async (e) => {
     e.preventDefault()
     try {
-      const newOrder = await axios.post(`http://localhost:3000/api/orders`, { products: productsOrder, address: address })
+      const newOrder = await axios.post(
+        `https://final-project-backend-nu.vercel.app/api/orders`,
+        { products: productsOrder, address: address }
+      );
       if (newOrder.data) {
         alert('Order created')
       }

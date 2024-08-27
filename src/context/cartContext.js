@@ -9,7 +9,9 @@ export const CartProvider = ({ children }) => {
         console.log( productId, productQuantity, productPrice)
         try {
             // Check if cart exists for the user
-            const existingCart = await axios.get(`http://localhost:3000/api/cart/user/${userID}`)
+            const existingCart = await axios.get(
+              `https://final-project-backend-nu.vercel.app/api/carts/user/${userID}`
+            );
             if (existingCart.data) {
                 const cartId = existingCart.data._id
                 const updatedProducts = [...existingCart.data.products]
@@ -32,20 +34,28 @@ export const CartProvider = ({ children }) => {
 
                 console.log(updatedProducts)
 
-                await axios.put(`http://localhost:3000/api/cart/${cartId}`, {
-                    products : updatedProducts
-                }) 
+                await axios.put(
+                  `https://final-project-backend-nu.vercel.app/api/carts/${cartId}`,
+                  {
+                    products: updatedProducts,
+                  }
+                ); 
                 alert('Product has been added')
             }
             else {
                 // CREATE THE CART
-                await axios.post(`http://localhost:8000/api/cart`, {
-                    products: [{
+                await axios.post(
+                  `https://final-project-backend-nu.vercel.app/api/carts`,
+                  {
+                    products: [
+                      {
                         productId: productId,
                         quantity: productQuantity,
-                        price: productPrice
-                    }]
-                })
+                        price: productPrice,
+                      },
+                    ],
+                  }
+                );
                 alert('Product has been added')
             }
 

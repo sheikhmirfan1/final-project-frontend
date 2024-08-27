@@ -9,7 +9,9 @@ const Card = () => {
 
   const fetchProducts = async () => {
     try {
-      const products = await axios.get("http://localhost:3000/api/products");
+      const products = await axios.get(
+        "https://final-project-backend-nu.vercel.app/api/products"
+      );
       setProducts(products.data);
     } catch (error) {
       console.log(error);

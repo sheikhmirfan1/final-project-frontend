@@ -21,7 +21,10 @@ const [error,setError] = useState(null)
 const sendMessage = async (e) => {
   e.preventDefault()
     try{
-  const newMessage = await axios.post(`http://localhost:3000/api/send-email`, message)
+  const newMessage = await axios.post(
+    `https://final-project-backend-nu.vercel.app/api/send-email`,
+    message
+  );
   setMessageInfo(newMessage.data.message)
  
 }

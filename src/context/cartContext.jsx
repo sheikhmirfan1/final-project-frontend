@@ -10,7 +10,9 @@ export const CartProvider = ({ children }) => {
   const addToCart = async (productId, productQuantity, productPrice) =>{
     console.log(productId, productQuantity, productPrice);
     try {
-      const cart = await axios.get("http://localhost:3000/api/carts");
+      const cart = await axios.get(
+        "https://final-project-backend-nu.vercel.app/api/carts"
+      );
       console.log(cart.data);
       if (cart.data) {
         const cartId = cart.data._id;
@@ -28,20 +30,26 @@ export const CartProvider = ({ children }) => {
           });
         }
         console.log(updatedProducts);
-        await axios.put(`http://localhost:3000/api/carts/${cartId}`, {
-          products: updatedProducts,
-        });
+        await axios.put(
+          `https://final-project-backend-nu.vercel.app/api/carts/${cartId}`,
+          {
+            products: updatedProducts,
+          }
+        );
         alert("Product has been added");
       } else {
-        await axios.post("http://localhost:3000/api/carts", {
-          products: [
-            {
-              product: productId,
-              quantity: productQuantity,
-              price: productPrice,
-            },
-          ],
-        });
+        await axios.post(
+          "https://final-project-backend-nu.vercel.app/api/carts",
+          {
+            products: [
+              {
+                product: productId,
+                quantity: productQuantity,
+                price: productPrice,
+              },
+            ],
+          }
+        );
         alert("Product has been added");
       }
     } catch (err) {
