@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useOrder } from "../context/orderContext";
-
-
-
+import { useOrder } from "../context/orderContext.jsx";
 import React from "react";
+
 import {
   Navbar,
   Collapse,
   Typography,
   Button,
-  IconButton,
-} from "@material-tailwind/react";
+  IconButton,} from "@material-tailwind/react";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -33,7 +30,9 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/">Home</Link>
+        <a href="">
+          <Link to="/">Home</Link>
+        </a>
       </Typography>
       <Typography
         as="li"
@@ -41,7 +40,10 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/order">Order</Link>
+        <a href="">
+          {" "}
+          <Link to="/order">Order</Link>
+        </a>
       </Typography>
       <Typography
         as="li"
@@ -49,7 +51,10 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/Reservation">Reservation</Link>
+        <a href="">
+          {" "}
+          <Link to="/Reservation">Reservation</Link>
+        </a>
       </Typography>
       <Typography
         as="li"
@@ -57,7 +62,9 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/contactUs">Contact Us</Link>
+        <a href="">
+          <Link to="/contactUs">Contact Us</Link>
+        </a>
       </Typography>
       <Typography
         as="li"
@@ -68,7 +75,9 @@ export function StickyNavbar() {
         <Link to="/aboutUS">About Us</Link>
       </Typography>
       <div className="flex ">
-        <p className="ml-10">{productsOrder.length > 0 ? productsOrder.length : ""}</p>
+        <p className="ml-10">
+          {productsOrder.length > 0 ? productsOrder.length : ""}
+        </p>
         <svg
           className="w-8 h-6 text-red-800 dark:text-white"
           aria-hidden="true"

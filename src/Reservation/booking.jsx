@@ -88,6 +88,7 @@ export function SimpleRegistrationForm() {
                 type="number"
                 size="lg"
                 placeholder="1"
+                required="true"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
               <Typography variant="h6" color="black" className="-mb-3">
@@ -98,15 +99,20 @@ export function SimpleRegistrationForm() {
                 type="datetime-local"
                 size="lg"
                 placeholder="2021-06-01T08:30"
+                required="true"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               />
             </div>
-
-            <Button className="mt-6 bg-blue-600" fullWidth="auto" type="submit">
-              Book Now
-            </Button>
           </form>
         </Card>
+        <Button
+          className="mt-6 bg-blue-600"
+          onClick={() =>
+            postReservation() && alert("Your reservation has been made!")
+          }
+        >
+          Book Now
+        </Button>
       </div>
       <Footer />
     </>

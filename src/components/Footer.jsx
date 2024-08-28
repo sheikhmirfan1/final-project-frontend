@@ -29,12 +29,6 @@ export function Footer() {
           </Typography>
           <div className="grid grid-cols-3 justify-between gap-4">
             <ul>
-              <Typography
-                variant="small"
-                color="white"
-                className="mb-3 font-medium opacity-100"
-              ></Typography>
-
               <li>
                 <Typography
                   as="a"
@@ -68,12 +62,6 @@ export function Footer() {
             </ul>
 
             <ul>
-              <Typography
-                
-                color="white"
-                className="mb-3 font-medium opacity-100"
-              >
-              </Typography>
 
               <li>
                 <Typography

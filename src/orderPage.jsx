@@ -70,8 +70,6 @@ export default function OrderPage() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  console.log(order, address);
-  console.log(products);
   return (
     <div className="bg-white w-full">
       <div className="w-full ">
