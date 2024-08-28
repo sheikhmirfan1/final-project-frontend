@@ -6,9 +6,10 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
+
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
-import { useOrder } from "../context/orderContext";
+import { useOrder } from "../context/orderContext.jsx";
 import axios from 'axios'
 
 
